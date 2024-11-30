@@ -1,6 +1,7 @@
 ﻿namespace examen_final.Domain.Configurations;
 
 public class PercentageKilogramsOptions {
+    public float BasePriceAddition { get; set; }
     public Balancer BalancerOne { get; set; } = new();
     public Balancer BalancerTwo { get; set; } = new();
     public Balancer BalancerThree { get; set; } = new();

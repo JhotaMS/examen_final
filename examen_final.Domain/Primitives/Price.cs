@@ -16,14 +16,14 @@ public record Price {
         return BASE_PRICE + (BASE_PRICE * increasePercentage / DIVIDEND_VALUE);
     }
 
-    public static float Additional( int additionalPercentage ) {
-        return BASE_PRICE * additionalPercentage / DIVIDEND_VALUE;
+    public static float Additional( float basePriceAddition, int additionalPercentage ) {
+        return basePriceAddition * additionalPercentage / DIVIDEND_VALUE;
     }
 
     public static float Total( float price, float additional, TypePeriodicity periodicity ) {
 
         price = price + additional;
-        if (periodicity is TypePeriodicity.monthly) 
+        if (periodicity is TypePeriodicity.Monthly) 
             price = price * MONTHLY;
 
         return price;

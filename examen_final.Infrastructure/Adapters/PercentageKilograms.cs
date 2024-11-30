@@ -13,6 +13,8 @@ internal sealed record class PercentageKilograms : IPercentageKilograms {
         _percentageKilogramsOptions = percentageKilogramsOptions.Value;
     }
 
+    public float BasePriceAddition => _percentageKilogramsOptions.BasePriceAddition;
+
     public int Percentage( int kiligrams ) {
         int percentage = default;
 

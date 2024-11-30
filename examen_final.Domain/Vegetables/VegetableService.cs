@@ -73,7 +73,7 @@ public sealed record class VegetableService {
 
         foreach (AdditionalVegetablesDto additional in additionalVegetables) {
             var percentage = _percentageKilograms.Percentage( additional.NecessaryQuantity );
-            var price = Price.Additional( percentage );
+            var price = Price.Additional( _percentageKilograms.BasePriceAddition, percentage );
             yield return new AdditionalVegetablesWithPriceDto(
                 additional.Name
                 , additional.NecessaryQuantity
